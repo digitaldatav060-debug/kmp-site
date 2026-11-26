@@ -313,6 +313,16 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:#55
 /* steady page: everything is shown in place from the start, no scroll-triggered fade/slide/zoom */
 .reveal,.reveal[data-fx]{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}
 .plx{transform:none!important}
+
+/* no sideways drift on any device: decorations may bleed past the edge, page never scrolls horizontally */
+html{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+@media(max-width:520px){
+ .mini-nav{padding:10px 14px}
+ .mini-nav .links{gap:14px}
+ .mini-nav .links a{letter-spacing:1.5px}
+ .mini-nav .mn-mark span{letter-spacing:2.5px}
+}
 </style>
 </head>
 <body>
